@@ -1,5 +1,6 @@
 # Suppose the user types:
 #  -2
+#  0
 #  17
 # ...what will the following program print?
 
@@ -7,7 +8,7 @@ total = 0
 count = 0
 
 while total <= 0:
-    total = int(input("What is the initial total? "))
+    total = int(input("Sum? "))
 
 while total > 0:
     if total >= 25:
@@ -23,4 +24,4 @@ while total > 0:
     count = count + 1
     print(temp)
 
-print("Required " + str(count) + " addend(s).")
+print(str(count) + " addend(s)")
