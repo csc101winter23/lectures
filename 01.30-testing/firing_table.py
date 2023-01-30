@@ -8,6 +8,10 @@ def get_float(prompt):
     :param prompt: A string to print before getting a float
     :return: The next float typed by the user
     """
+    # Note that this function performs input and output -- it is actually
+    #  possible to test this in a unittest, but it is usually far more
+    #  convenient to leave that for system tests...
+    return float(input(prompt))
 
 
 def time_of_flight(height):
@@ -17,6 +21,7 @@ def time_of_flight(height):
     :param height: An initial height of a cannonball
     :return: The time the cannonball will be in the air
     """
+    return (2 * height / 9.81) ** 0.5
 
 
 def range_of_shot(time, velocity):
@@ -27,6 +32,7 @@ def range_of_shot(time, velocity):
     :param velocity: A cannonball's horizontal velocity
     :return: The distance the cannonball will travel
     """
+    return time * velocity
 
 
 def is_hit(shot, distance, width):
@@ -38,9 +44,27 @@ def is_hit(shot, distance, width):
     :param width: A target's width
     :return: Whether or not the cannonball hits the target
     """
+    return distance <= shot <= (distance + width)
 
 
 def main():
+    # This is a statement that does nothing: it ensures that main is a valid
+    #  function, even though it doesn't do anything yet.
+    pass
+
+    height = get_float("Enter the height of the cannon: ")
+    velocity = get_float("Enter the initial velocity of the ball: ")
+    distance = get_float("Enter the distance to the target: ")
+    width = get_float("Enter the width of the target: ")
+
+    time = time_of_flight(height)
+    shot = range_of_shot(time, velocity)
+    hit = is_hit(shot, distance, width)
+
+    if hit:
+        print("Hit!")
+    else:
+        print("Miss!")
 
 
 if __name__ == "__main__":
