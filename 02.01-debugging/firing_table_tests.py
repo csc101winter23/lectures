@@ -27,6 +27,16 @@ class TestFiringTable(unittest.TestCase):
         hit = firing_table.is_hit(0.0, 160, 25)
         self.assertFalse(hit)
 
+    def test07_is_hit(self):
+        # Anytime a bug is found, the first step should be to add a unit test
+        #  illustrating the bug -- we are presumably in this situation because
+        #  the existing unit tests were insufficient:
+        hit = firing_table.is_hit(10, 5, 1)
+        self.assertFalse(hit)
+        # ...once the bug is fixed, *all* tests should pass, confirming that
+        #  the bug was actually fixed and that no existing tests were
+        #  accidentally broken.
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -41,7 +41,8 @@ def is_hit(shot, distance, width):
     :param width: A target's width
     :return: Whether or not the cannonball hits the target
     """
-    return distance <= shot
+    # print("is_hit: " + str(shot) + ", " + str(distance) + ", " + str(width))
+    return distance <= shot <= distance + width
 
 
 def main():
@@ -54,6 +55,14 @@ def main():
     shot = range_of_shot(time, velocity)
     hit = is_hit(shot, distance, width)
 
+    # Print statements can be added to trace execution and inspect the values
+    #  of variables along the way:
+    # print("time: " + str(time))
+    # print("shot: " + str(shot))
+    # print("hit: " + str(hit))
+
+    # There are two possible paths through this conditional: no amount of tests
+    #  for the first path could ever possibly catch an error along the second.
     if hit:
         print("Hit!")
     else:

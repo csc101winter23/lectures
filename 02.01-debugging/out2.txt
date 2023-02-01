@@ -1,0 +1,1 @@
+Enter the height of the cannon: Enter the initial velocity of the ball: Enter the distance to the target: Enter the width of the target: Miss!
