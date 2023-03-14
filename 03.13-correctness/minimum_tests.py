@@ -70,5 +70,6 @@ class TestMinElement(unittest.TestCase):
         for i in range(len(lst)):
             self.assertTrue(element <= lst[i])
 
+
 if __name__ == "__main__":
     unittest.main()
